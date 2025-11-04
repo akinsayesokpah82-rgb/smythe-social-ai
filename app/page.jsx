@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <main style={{ padding: "40px", textAlign: "center" }}>
-      <h1>Welcome to Smythe Social AI</h1>
-      <p>Your app is deployed successfully on Netlify 🎉</p>
+    <main style={{ textAlign: "center", padding: "40px" }}>
+      <h1>Smythe Social AI</h1>
+      <p>🚀 Deployed successfully with Netlify + GitHub</p>
     </main>
   );
 }
