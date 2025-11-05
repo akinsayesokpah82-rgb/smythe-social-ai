@@ -1,0 +1,15 @@
+// netlify/functions/addUser.js
+import { createClient } from '@supabase/supabase-js';
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.SUPABASE_SERVICE_ROLE_KEY
+);
+
+export const handler = async (event) => {
+  const { email } = JSON.parse(event.body);
+  const { data, error } = await supabase.from('users').insert({ email });
+
+  if (error) return { statusCode: 500, body: JSON.stringify(error) };
+  return { statusCode: 200, body: JSON.stringify(data) };
+};
